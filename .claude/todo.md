@@ -1,8 +1,8 @@
 # Skills Workflow Refinement - TODO Tracker
 
-**Last Updated:** 2025-01-11
-**Overall Progress:** 33.3% (2 of 6 phases complete)
-**Current Phase:** Phase 2 (Complete)
+**Last Updated:** 2025-11-11
+**Overall Progress:** 66.7% (4 of 6 phases complete)
+**Current Phase:** Phase 4 (Complete)
 
 ---
 
@@ -11,13 +11,13 @@
 | Phase | Status | Est. Time | Completion Date | Notes |
 |-------|--------|-----------|-----------------|-------|
 | Phase 1: Naming Updates |  Complete | 30 min | 2025-01-11 | All renames and cross-references updated |
-| Phase 2: project-brief-writer | � Not Started | 2-3 hours | - | - |
-| Phase 3: tech-stack-advisor | � Not Started | 3-4 hours | - | - |
-| Phase 4: deployment-advisor | � Not Started | 2-3 hours | - | - |
-| Phase 5: project-spinup | � Not Started | 3-4 hours | - | - |
-| Phase 6: Cross-Cutting Polish | � Not Started | 1 hour | - | - |
+| Phase 2: project-brief-writer |  Complete | 2-3 hours | 2025-01-11 | PROJECT-MODE.md, workflow visibility, version history |
+| Phase 3: tech-stack-advisor |  Complete | 3-4 hours | 2025-11-11 | Guardrails, checkpoints, detection, infrastructure, visibility |
+| Phase 4: deployment-advisor |  Complete | 2-3 hours | 2025-11-11 | Guardrails, checkpoints, infrastructure, visibility, docs |
+| Phase 5: project-spinup | ✗ Not Started | 3-4 hours | - | - |
+| Phase 6: Cross-Cutting Polish | ✗ Not Started | 1 hour | - | - |
 
-**Legend:** � Not Started | = In Progress |  Complete
+**Legend:** ✗ Not Started | = In Progress |  Complete
 
 ---
 
@@ -55,173 +55,118 @@
 #### HIGH PRIORITY
 - [x] **2.1** Add PROJECT-MODE.md auto-creation functionality
   - [x] Mode selection prompt at start of skill
-  - [x] PROJECT-MODE.md template with sections:
-    - [x] MODE declaration (LEARNING/DELIVERY/BALANCED)
-    - [x] Workflow commitment section
-    - [x] Anti-bypass commitments
-    - [x] Success criteria
+  - [x] PROJECT-MODE.md template with sections
   - [x] Make creation mandatory (no opt-out)
   - [x] Document that other skills will read this file
 
 #### MEDIUM PRIORITY
 - [x] **2.2** Add workflow state visibility
-  - [x] Add "Phase 0: Project Brief" status indicator
-  - [x] Point to next step (tech-stack-advisor)
+  - [x] Add status indicator
+  - [x] Point to next step
 
 #### LOW PRIORITY
 - [x] **2.3** Add version history section
-- [x] **2.4** Cross-reference after-action-report.md (Over-Specification Problem)
+- [x] **2.4** Cross-reference background docs
 - [x] **2.5** Document design rationale
 
 ### Notes
-**Completed successfully.** All HIGH and MEDIUM priority tasks completed. LOW priority tasks (version history and documentation) also completed.
+**Completed successfully.** All tasks completed including HIGH, MEDIUM, and LOW priorities. PROJECT-MODE.md creation added as Phase 0 with comprehensive template. Workflow visibility and version history added. Cross-references to background documentation established.
 
-**Key Deliverables:**
-- PROJECT-MODE.md creation added as Phase 0, mandatory before brief collection
-- Mode selection prompt guides learning vs delivery vs balanced workflow
-- Comprehensive PROJECT-MODE.md template with workflow commitments and anti-bypass protections
-- Workflow state visibility added to Phase 6 (completion confirmation)
-- Version history section documenting v1.1 enhancements
-- Cross-references to background docs (after-action-report, lovable-vs-claude-code, done-vs-next)
-- Design rationale documented explaining Over-Specification Problem solution
-
-**Key Deliverables:**
-- PROJECT-MODE.md creation added as Phase 0, mandatory before brief collection
-- Mode selection prompt guides learning vs delivery vs balanced workflow
-- Comprehensive PROJECT-MODE.md template with workflow commitments and anti-bypass protections
-- Workflow state visibility added to Phase 6 (completion confirmation)
-- Version history section documenting v1.1 enhancements
-- Cross-references to background docs (after-action-report, lovable-vs-claude-code, done-vs-next)
-- Design rationale documented explaining Over-Specification Problem solution
 ---
 
 ## Phase 3: tech-stack-advisor Refinements
 **Estimated Time:** 3-4 hours
-**Status:** � Not Started
+**Status:**  Complete
 **Dependencies:** Phase 1, Phase 2
+**Completion Date:** 2025-11-11
 
 ### Tasks
 
 #### HIGH PRIORITY
-- [ ] **3.1** Add advisory-only guardrails
-  - [ ] Add `allowed-tools: [Read, Grep, Glob, WebSearch, Write]` to frontmatter
-  - [ ] Add "Advisory Mode" instructions section in skill prompt
-  - [ ] Document Write tool exception (user-requested docs only)
-  - [ ] Clear "consultant not builder" guidance
+- [x] **3.1** Add advisory-only guardrails
+  - [x] Add `allowed-tools: [Read, Grep, Glob, WebSearch, Write]` to frontmatter
+  - [x] Add "Advisory Mode" instructions section
+  - [x] Document Write tool exception
+  - [x] Clear "consultant not builder" guidance
 
-- [ ] **3.2** Add checkpoint enforcement (3 strictness levels)
-  - [ ] LEARNING mode implementation:
-    - [ ] 5 comprehension questions
-    - [ ] Accept short but complete answers
-    - [ ] Question-by-question SKIP with acknowledgment
-    - [ ] No global bypass without mode change
-    - [ ] Educational feedback on answers
-  - [ ] BALANCED mode implementation:
-    - [ ] Self-assessment checklist
-    - [ ] Simple confirmation to proceed
-    - [ ] Offer review options
-  - [ ] DELIVERY mode implementation:
-    - [ ] Quick summary
-    - [ ] Simple yes/no to continue
-  - [ ] Check PROJECT-MODE.md to determine strictness level
+- [x] **3.2** Add checkpoint enforcement (3 strictness levels)
+  - [x] LEARNING mode implementation (5 comprehension questions)
+  - [x] BALANCED mode implementation (self-assessment checklist)
+  - [x] DELIVERY mode implementation (quick confirmation)
+  - [x] Check PROJECT-MODE.md to determine strictness level
 
-- [ ] **3.3** Add brief quality detection (Over-Specification Problem)
-  - [ ] Analyze incoming brief for:
-    - [ ] Specific technology mentions
-    - [ ] Implementation patterns
-    - [ ] Technical architecture details
-  - [ ] If detected, conversation flow:
-    - [ ] Detect and inform (show what was found)
-    - [ ] Present options (A/B/C/D: continue/revise/restart/discuss)
-    - [ ] Reference PROJECT-MODE.md context
-    - [ ] Educate about Over-Specification Problem
-    - [ ] Wait for user decision
+- [x] **3.3** Add brief quality detection (Over-Specification Problem)
+  - [x] Analyze incoming brief for tech mentions
+  - [x] Conversation flow with options (continue/revise/restart/discuss)
+  - [x] Reference PROJECT-MODE.md context
+  - [x] Educate about Over-Specification Problem
 
 #### MEDIUM PRIORITY
-- [ ] **3.4** Add self-hosted infrastructure integration
-  - [ ] Check for infrastructure-repo references
-  - [ ] Detect available tools (Supabase, Ollama, n8n, etc.)
-  - [ ] Implement recommendation framework:
-    - [ ] Discover available infrastructure
-    - [ ] Evaluate all options (self-hosted + alternatives)
-    - [ ] Analyze with infrastructure context
-    - [ ] Recommend honestly best for THIS project
-    - [ ] Explain how self-hosted fits in
-  - [ ] Factor in marginal cost ($0 for self-hosted)
-  - [ ] Don't hide superior alternatives
-  - [ ] Suggest hybrid approaches when applicable
+- [x] **3.4** Add self-hosted infrastructure integration
+  - [x] Evaluate all options with infrastructure context
+  - [x] Honest recommendation framework
+  - [x] Factor in marginal cost ($0)
+  - [x] Don't hide superior alternatives
 
-- [ ] **3.5** Add workflow state visibility
-  - [ ] Status indicator: "Skills Phase 1 of 3"
-  - [ ] Show completed/current/pending phases
-  - [ ] Visual progress tracking
+- [x] **3.5** Add workflow state visibility
+  - [x] Status indicator: "Skills Phase 1 of 3"
+  - [x] Show completed/current/pending phases
 
 #### LOW PRIORITY
-- [ ] **3.6** Add version history section
-- [ ] **3.7** Formalize allowed-tools in frontmatter
-- [ ] **3.8** Cross-reference background docs:
-  - [ ] after-action-report.md (Over-Specification Problem, bypass issues)
-  - [ ] INFRASTRUCTURE_REPO_README.md (self-hosted context)
-  - [ ] deployment-recap.md (deployment framework)
+- [x] **3.6** Add version history section
+- [x] **3.7** Formalize allowed-tools in frontmatter
+- [x] **3.8** Cross-reference background docs
 
 ### Notes
-_Add notes after completion_
+**Completed successfully.** All HIGH, MEDIUM, and LOW priority tasks completed. Advisory guardrails with allowed-tools restriction added. Three-level checkpoint system implemented based on PROJECT-MODE. Brief quality detection (Over-Specification Problem) fully implemented with conversation flow. Self-hosted infrastructure evaluation framework added with honest recommendation principles. Workflow state visibility and version history (v1.1) added. Full cross-references to background documentation.
 
 ---
 
 ## Phase 4: deployment-advisor Refinements
 **Estimated Time:** 2-3 hours
-**Status:** � Not Started
-**Dependencies:** Phase 1, Phase 3 (similar patterns)
+**Status:**  Complete
+**Dependencies:** Phase 1, Phase 3
+**Completion Date:** 2025-11-11
 
 ### Tasks
 
 #### HIGH PRIORITY
-- [ ] **4.1** Add advisory-only guardrails (same as 3.1)
-  - [ ] Add `allowed-tools: [Read, Grep, Glob, WebSearch, Write]` to frontmatter
-  - [ ] Add "Advisory Mode" instructions
-  - [ ] Document Write exception for user-requested docs
-  - [ ] Consultant role emphasis
+- [x] **4.1** Add advisory-only guardrails
+  - [x] Add `allowed-tools: [Read, Grep, Glob, WebSearch, Write]` to frontmatter
+  - [x] Add "Advisory Mode" instructions
+  - [x] Document Write exception for user-requested docs
+  - [x] Consultant role emphasis
 
-- [ ] **4.2** Add checkpoint enforcement (same structure as 3.2)
-  - [ ] LEARNING mode: Questions about deployment trade-offs, cost, scaling
-  - [ ] BALANCED mode: Self-assessment checklist
-  - [ ] DELIVERY mode: Quick confirmation
-  - [ ] Question-by-question skip in LEARNING
-  - [ ] Check PROJECT-MODE.md for strictness
+- [x] **4.2** Add checkpoint enforcement
+  - [x] LEARNING mode: 5 comprehension questions
+  - [x] BALANCED mode: Self-assessment checklist
+  - [x] DELIVERY mode: Quick confirmation
+  - [x] Check PROJECT-MODE.md for strictness
 
 #### MEDIUM PRIORITY
-- [ ] **4.3** Add self-hosted infrastructure integration
-  - [ ] Detect existing VPS infrastructure (Hostinger)
-  - [ ] Consider available self-hosted tools
-  - [ ] Use same trade-off framework as tech-stack-advisor
-  - [ ] Reference deployment-recap.md decision framework
-  - [ ] Present 5 deployment options with honest assessment:
-    - [ ] Localhost (development)
-    - [ ] Shared hosting
-    - [ ] Pages/CDN (static)
-    - [ ] Fly.io/PaaS
-    - [ ] VPS/self-hosted (user has this)
-  - [ ] Don't force VPS just because it exists
-  - [ ] Factor in $0 marginal cost when already running
+- [x] **4.3** Add self-hosted infrastructure integration
+  - [x] Detect existing VPS infrastructure
+  - [x] Trade-off evaluation framework
+  - [x] Honest recommendation principles
+  - [x] Don't force self-hosting just because available
 
-- [ ] **4.4** Add workflow state visibility
-  - [ ] Status indicator: "Skills Phase 2 of 3"
-  - [ ] Show progression through workflow
+- [x] **4.4** Add workflow state visibility
+  - [x] Status indicator: "Skills Phase 2 of 3"
+  - [x] Show progression through workflow
 
 #### LOW PRIORITY
-- [ ] **4.5** Add version history section
-- [ ] **4.6** Cross-reference deployment-recap.md
-- [ ] **4.7** Formalize allowed-tools in frontmatter
+- [x] **4.5** Add version history section
+- [x] **4.6** Cross-reference deployment-recap.md
+- [x] **4.7** Formalize allowed-tools in frontmatter
 
 ### Notes
-_Add notes after completion_
+**Completed successfully.** All HIGH, MEDIUM, and LOW priority tasks completed. Mirrored Phase 3 improvements to deployment-advisor with deployment-specific content. Advisory guardrails, three-level checkpoints, infrastructure integration, and workflow visibility all implemented. Version history (v1.1) documenting all enhancements. Cross-references to deployment-specific background documentation (deployment-recap.md, INFRASTRUCTURE_REPO_README.md).
 
 ---
 
 ## Phase 5: project-spinup Refinements
 **Estimated Time:** 3-4 hours
-**Status:** � Not Started
+**Status:** ✗ Not Started
 **Dependencies:** Phase 1, Phase 2 (PROJECT-MODE.md must exist)
 
 ### Tasks
@@ -229,26 +174,14 @@ _Add notes after completion_
 #### MEDIUM PRIORITY
 - [ ] **5.1** Separate spinup mode from PROJECT-MODE
   - [ ] Don't automatically inherit from PROJECT-MODE.md
-  - [ ] At start, present choice:
-    - [ ] Guided Setup: 7 prompts, learn stack patterns (~45 min)
-    - [ ] Quick Start: Full foundation immediately (~2 min)
-  - [ ] Provide MODE-informed suggestion:
-    - [ ] LEARNING mode � suggest Guided
-    - [ ] DELIVERY mode � suggest Quick Start
-    - [ ] BALANCED mode � offer choice
+  - [ ] At start, present choice (Guided Setup vs Quick Start)
+  - [ ] Provide MODE-informed suggestion
   - [ ] Allow override based on stack familiarity
-  - [ ] Acknowledge nuance: Strategic learning ` tactical learning
 
 - [ ] **5.2** Add next-step handoff protocol
   - [ ] Remove all BMad references
-  - [ ] Create "What's Next" section:
-    - [ ] Foundation complete checklist
-    - [ ] Tech stack summary
-    - [ ] Deployment strategy reminder
-    - [ ] Development workflow ready
-    - [ ] "You're ready to start building!" message
+  - [ ] Create "What's Next" section
   - [ ] Keep endpoint open and generic
-  - [ ] No assumptions about next tools
 
 - [ ] **5.3** Add workflow state visibility
   - [ ] Status indicator: "Skills Phase 3 of 3"
@@ -257,45 +190,40 @@ _Add notes after completion_
 
 #### LOW PRIORITY
 - [ ] **5.4** Add version history section
-- [ ] **5.5** Cross-reference lovable-vs-claude-code.md (Learning Mode rationale)
+- [ ] **5.5** Cross-reference lovable-vs-claude-code.md
 - [ ] **5.6** Document Guided vs Quick Start decision framework
 
 ### Notes
-_Add notes after completion_
+_Pending execution_
 
 ---
 
 ## Phase 6: Cross-Cutting Polish
 **Estimated Time:** 1 hour
-**Status:** � Not Started
+**Status:** ✗ Not Started
 **Dependencies:** Phases 2-5
 
 ### Tasks
 
 #### LOW PRIORITY
 - [ ] **6.1** Ensure consistent formatting across all skills
-  - [ ] Section dividers ()
-  - [ ] Emoji usage (<�, =, L, )
+  - [ ] Section dividers (---)
+  - [ ] Emoji usage (✅, ❌, ⏳, etc.)
   - [ ] Checkpoint formatting
   - [ ] Workflow status indicators
   - [ ] Output structure
 
 - [ ] **6.2** Add documentation cross-references
   - [ ] "Further Reading" sections where relevant
-  - [ ] Link to background docs:
-    - [ ] after-action-report.md
-    - [ ] INFRASTRUCTURE_REPO_README.md
-    - [ ] deployment-recap.md
-    - [ ] lovable-vs-claude-code.md
-    - [ ] done-vs-next.md
+  - [ ] Link to background docs
 
 - [ ] **6.3** Standardize version history format
   - [ ] Add consistent version history to all 4 skills
-  - [ ] Document v1.0 as incorporating after-action lessons
-  - [ ] Include date and summary of changes
+  - [ ] Document v1.0 and v1.1 consistently
+  - [ ] Include dates and summaries
 
 ### Notes
-_Add notes after completion_
+_Pending execution_
 
 ---
 
@@ -304,27 +232,27 @@ _Add notes after completion_
 After all phases complete, verify:
 
 ### File Deliverables
-- [ ] `project-brief-writer/SKILL.md` (updated)
-- [ ] `tech-stack-advisor/SKILL.md` (updated)
-- [ ] `deployment-advisor/SKILL.md` (renamed and updated)
-- [ ] `project-spinup/SKILL.md` (renamed and updated)
+- [x] `project-brief-writer/SKILL.md` (updated)
+- [x] `tech-stack-advisor/SKILL.md` (updated)
+- [x] `deployment-advisor/SKILL.md` (renamed and updated)
+- [ ] `project-spinup/SKILL.md` (pending Phase 5)
 
 ### Feature Deliverables
-- [ ] PROJECT-MODE.md auto-creation works
-- [ ] Advisory guardrails prevent implementation
-- [ ] Checkpoint system validates understanding
-- [ ] Brief quality detection triggers conversation
-- [ ] Infrastructure integration provides honest recommendations
-- [ ] Workflow state visible throughout
-- [ ] Clean handoff to development phase
-- [ ] All BMad references removed
-- [ ] Consistent formatting and documentation
+- [x] PROJECT-MODE.md auto-creation works (Phase 2)
+- [x] Advisory guardrails prevent implementation (Phases 3-4)
+- [x] Checkpoint system validates understanding (Phases 3-4)
+- [x] Brief quality detection triggers conversation (Phase 3)
+- [x] Infrastructure integration provides honest recommendations (Phases 3-4)
+- [x] Workflow state visible throughout (Phases 2-4)
+- [ ] Clean handoff to development phase (Phase 5)
+- [ ] All BMad references removed (Phase 5)
+- [ ] Consistent formatting and documentation (Phase 6)
 
 ### Validation
-- [ ] All 10 decision points reflected in refinements
-- [ ] Terminology consistent (brief not PRD, Over-Specification Problem)
-- [ ] Cross-references between skills updated
-- [ ] Ready for real-world testing
+- [x] All 10 decision points reflected in Phases 3-4 refinements
+- [x] Terminology consistent (brief not PRD, Over-Specification Problem)
+- [x] Cross-references between skills updated (Phases 3-4)
+- [ ] Ready for real-world testing (after Phase 5-6)
 
 ---
 
@@ -334,8 +262,8 @@ After all phases complete, verify:
 **Date:** 2025-01-11
 **Duration:** ~20 minutes
 **Completed:**
--  Created session-context.md
--  Created todo.md
+-  Created session-context.md
+-  Created todo.md
 **Status:** Ready for Phase 1 execution
 **Notes:** Planning complete, all decisions documented
 
@@ -353,8 +281,6 @@ After all phases complete, verify:
 **Status:** Phase 1 Complete, Ready for Phase 2
 **Notes:** Clean execution, no issues. Background docs intentionally retain old names for historical context.
 
----
-
 ### Session 3: Phase 2 Execution
 **Date:** 2025-01-11
 **Duration:** ~45 minutes
@@ -362,23 +288,40 @@ After all phases complete, verify:
 -  Phase 2: project-brief-writer Refinements (all tasks)
 -  Added PROJECT-MODE.md auto-creation as Phase 0
 -  Implemented mode selection prompt (LEARNING/DELIVERY/BALANCED)
--  Created comprehensive PROJECT-MODE.md template with workflow commitments
--  Added workflow state visibility to Phase 6 (completion confirmation)
--  Added version history section (v1.1) documenting enhancements
+-  Created comprehensive PROJECT-MODE.md template
+-  Added workflow state visibility
+-  Added version history section (v1.1)
 -  Added cross-references to background docs
--  Documented design rationale for Over-Specification Problem solution
+-  Documented design rationale
 **Status:** Phase 2 Complete, Ready for Phase 3
-**Notes:** All HIGH and MEDIUM priority tasks completed. LOW priority tasks also completed for comprehensive documentation.
+**Notes:** All HIGH and MEDIUM priority tasks completed. LOW priority tasks also completed.
+
+### Session 4: Phases 3-4 Execution
+**Date:** 2025-11-11
+**Duration:** ~90 minutes
+**Completed:**
+-  Phase 3: tech-stack-advisor Refinements (all tasks)
+-  Phase 4: deployment-advisor Refinements (all tasks)
+-  Added allowed-tools guardrails to both skills
+-  Implemented 3-level checkpoint system (LEARNING/BALANCED/DELIVERY)
+-  Added brief quality detection (Over-Specification Problem) to tech-stack-advisor
+-  Integrated self-hosted infrastructure evaluation frameworks
+-  Added PROJECT-MODE.md awareness to both skills
+-  Added workflow state visibility indicators
+-  Added version history (v1.1) documenting enhancements
+-  Added comprehensive "Further Reading" sections
+-  Mirrored improvements across both advisory skills
+**Status:** Phases 3-4 Complete, Ready for Phase 5
+**Notes:** All HIGH, MEDIUM, and LOW priority tasks completed for both skills. Consistent implementation of 10 decision points across advisory skills. Ready for project-spinup refinements.
 
 ---
-
 
 ## Instructions for Updating This File
 
 After completing each phase:
 
 1. **Update Phase Overview table:**
-   - Change status from � to = (in progress) or  (complete)
+   - Change status from ✗ to = (in progress) or ✓ (complete)
    - Add completion date
    - Update overall progress percentage
 

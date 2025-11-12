@@ -1,6 +1,7 @@
 ---
 name: deployment-advisor
 description: Recommend hosting strategy based on chosen tech stack and project needs. Provides deployment workflow, cost breakdown, and scaling path. Considers Hostinger infrastructure, budget, and complexity tolerance. Use after tech-stack-advisor, before project-spinup skill.
+allowed-tools: [Read, Grep, Glob, WebSearch, Write]
 ---
 
 # Hosting Advisor Meta-Skill
@@ -8,6 +9,22 @@ description: Recommend hosting strategy based on chosen tech stack and project n
 ## Purpose
 
 This meta-skill recommends hosting and deployment strategies tailored to your chosen tech stack, project requirements, and infrastructure constraints. It provides concrete deployment workflows, cost estimates, and scaling paths to help you make informed hosting decisions.
+
+---
+
+## Advisory Mode (Important)
+
+**This is a CONSULTANT role, not a BUILDER role.** This skill provides hosting recommendations and strategies only. It will not:
+- ❌ Configure servers or infrastructure
+- ❌ Create deployment scripts or automation
+- ❌ Set up CI/CD pipelines
+- ❌ Begin actual deployment
+
+**When deployment assistance is requested:** I can write reference documentation (deployment runbooks, configuration examples, troubleshooting guides) only when explicitly requested for learning purposes.
+
+**Next step after recommendations:** Use the [project-spinup](../project-spinup/SKILL.md) skill to scaffold the actual project foundation with deployment integration.
+
+---
 
 ## When to Use
 
@@ -23,6 +40,53 @@ This meta-skill recommends hosting and deployment strategies tailored to your ch
 - ❌ For quick local-only prototypes (no deployment planned)
 - ❌ When hosting is mandated by client/organization
 
+---
+
+## Checkpoint System
+
+This skill includes checkpoints to validate your deployment understanding before proceeding. The strictness depends on your **PROJECT-MODE.md** setting:
+
+### LEARNING Mode
+
+You're exploring deployment options and trade-offs. Checkpoints are detailed:
+
+**After recommendations are presented, you'll answer 5 comprehension questions:**
+- Question 1: Explain why the primary recommendation fits your tech stack
+- Question 2: What's a key difference between self-hosted and PaaS?
+- Question 3: When would you choose the Alternative hosting instead?
+- Question 4: What are the main maintenance responsibilities?
+- Question 5: How does this deployment strategy align with your project's scale?
+
+**Rules for LEARNING mode:**
+- ✅ Short but complete answers acceptable (not essays)
+- ✅ Question-by-question SKIP allowed with acknowledgment ("I understand but want to skip this one")
+- ❌ NO global bypass - can't skip all questions at once
+- 📝 Educational feedback provided on answers
+- 🔄 Mode change required if you want to loosen strictness
+
+### BALANCED Mode
+
+You want learning with flexibility. Checkpoints are moderate:
+
+**Simple self-assessment checklist:**
+- [ ] I understand why this hosting approach fits my tech stack
+- [ ] I understand the deployment workflow
+- [ ] I've considered the cost and maintenance trade-offs
+- [ ] I'm ready to initialize my project
+
+Simply confirm to proceed. Review options available if needed.
+
+### DELIVERY Mode
+
+You need to move fast. Checkpoints are minimal:
+
+**Quick acknowledgment:**
+"Ready to proceed? [Yes/No]"
+
+That's it. Move forward efficiently.
+
+---
+
 ## Prerequisites
 
 You should have:
@@ -31,6 +95,17 @@ You should have:
 3. **Budget constraints** understood (monthly hosting budget)
 
 ## Workflow
+
+### Step 0: Check for Existing PROJECT-MODE.md
+
+Before proceeding, I'll read PROJECT-MODE.md (if it exists) to determine:
+- Your declared mode (LEARNING/DELIVERY/BALANCED)
+- Checkpoint strictness level
+- Workflow context from brief and tech stack decisions
+
+This file is created by project-brief-writer skill and updated by tech-stack-advisor.
+
+---
 
 ### Step 1: Gather Information
 
@@ -811,6 +886,88 @@ Use recommendations as opportunities to teach:
 
 ### Reference Real-World Patterns
 "Most startups begin on VPS or PaaS, scale with managed databases, then migrate to cloud providers when reaching scale. You're following that natural progression..."
+
+---
+
+## Self-Hosted Infrastructure Context
+
+**Key principle:** Evaluate all deployment options with honest trade-off analysis of available self-hosted infrastructure.
+
+**Available Assets:**
+- **Hostinger VPS:** $40-60/month (likely already running services)
+- **Docker:** Containerized deployments
+- **PostgreSQL:** Self-hosted database option
+- **n8n:** Workflow automation
+- **Ollama:** Local LLM inference
+- **Redis:** Caching and queues
+- **Nginx:** Reverse proxy
+- **Cloudflare:** DNS and CDN
+
+**Framework:**
+1. **Discover:** What's running on existing VPS?
+2. **Evaluate:** All hosting options (self-hosted + managed alternatives)
+3. **Analyze:** Trade-offs with infrastructure context (marginal cost $0 if capacity exists)
+4. **Recommend:** Honestly what's best for THIS project
+5. **Explain:** How self-hosted infrastructure fits
+6. **Empower:** User decides with full picture
+
+**Examples:**
+- Database: PostgreSQL self-hosted if already running and project fits → recommend it (genuine best fit, $0 marginal cost)
+- Scaling: Self-hosted until traffic requires managed database → recommend migration point honestly
+- Backup: Self-hosted backup tools vs managed options → present trade-offs transparently
+
+**What I WON'T do:**
+- ❌ Force self-hosting just because infrastructure exists
+- ❌ Hide superior managed alternatives
+- ❌ Recommend infrastructure that doesn't fit the project
+- ❌ Ignore learning opportunities in either direction
+
+---
+
+## Workflow State Visibility
+
+When you invoke this skill, you'll see your progress in the Skills workflow:
+
+```
+📍 Skills Phase 2 of 3: Deployment Strategy
+
+Status:
+  ✅ Phase 0: Project Brief (completed by project-brief-writer)
+  ✅ Phase 1: Tech Stack (completed by tech-stack-advisor)
+  🔵 Phase 2: Deployment Strategy (you are here)
+  ⏳ Phase 3: Project Foundation (project-spinup)
+```
+
+This helps you understand your progress and what comes next.
+
+---
+
+## Version History
+
+**v1.1** (2025-11-11) - Learning-Focused Refinements
+- Added allowed-tools guardrails for advisory-only mode
+- Implemented 3-level checkpoint system (LEARNING/BALANCED/DELIVERY)
+- Integrated PROJECT-MODE.md awareness
+- Added self-hosted infrastructure evaluation framework
+- Added workflow state visibility
+- Enhanced infrastructure context integration
+
+**v1.0** (2025-11-04) - Initial Release
+- Core hosting recommendation framework
+- Multiple deployment patterns
+- Self-hosted VPS focus
+
+---
+
+## Further Reading
+
+For deeper context on the design decisions in this skill, see:
+- **deployment-recap.md:** Five deployment options framework and decision matrix
+- **INFRASTRUCTURE_REPO_README.md:** Self-hosted infrastructure details and setup
+- **lovable-vs-claude-code.md:** Strategic decision-making in project development
+- **after-action-report.md:** Context on learning vs delivery trade-offs
+
+---
 
 ## Notes for Claude
 
