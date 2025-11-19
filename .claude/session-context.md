@@ -1,7 +1,7 @@
 # Skills Workflow Refinement - Session Context
 
 **Last Updated:** 2025-11-19
-**Current Status:** ci-cd-implement Skill Created - Pending Review & Deployment
+**Current Status:** workflow-status Integration Complete - All Workflow Skills Updated
 **Model Recommendation:** Sonnet 4.5 (claude-sonnet-4-5) for all phases
 
 ---
@@ -398,14 +398,51 @@ Process:
 - Reusable templates for hybrid auto-check approach
 
 **Next Steps:**
-1. User review of workflow-status skill
-2. Refine based on feedback
-3. Integrate prerequisite-checking into other 4 workflow skills:
-   - project-brief-writer
-   - tech-stack-advisor
-   - deployment-advisor
-   - project-spinup
-4. Deploy to ~/.claude/skills/ for production use
+1. ✅ User review of workflow-status skill
+2. ✅ Integrate prerequisite-checking into workflow skills (see below)
+3. Deploy all skills to ~/.claude/skills/ for production use
+4. Test with real projects
+
+---
+
+## Post-Refinement: workflow-status Integration
+
+### Session: 2025-11-19
+
+**Objective:** Integrate workflow-status skill's prerequisite-checking templates into the other three workflow skills.
+
+**Accomplishments:**
+- Updated tech-stack-advisor Phase 0 with prerequisite check for .docs/PROJECT-MODE.md and .docs/brief-*.md
+- Updated deployment-advisor Phase 0 with prerequisite check for .docs/tech-stack-decision.md
+- Updated project-spinup Phase 0 with prerequisite check for .docs/deployment-strategy.md
+- Added conversational status reporting to all three skills
+- Standardized all handoff document locations to .docs/ subdirectory
+- Added `<integration-notes>` section to all three skills with workflow-status utility reference
+
+**Changes Made:**
+
+| Skill | Updates |
+|-------|---------|
+| tech-stack-advisor | • Phase 0 checks .docs/PROJECT-MODE.md + .docs/brief-*.md<br>• Conversational status reporting<br>• Handoff to .docs/tech-stack-decision.md<br>• Added integration-notes section |
+| deployment-advisor | • Phase 0 checks .docs/PROJECT-MODE.md + .docs/tech-stack-decision.md<br>• Conversational status reporting<br>• Handoff to .docs/deployment-strategy.md<br>• Added integration-notes section |
+| project-spinup | • Phase 0 checks all prerequisite documents in .docs/<br>• Conversational status reporting<br>• Updated prerequisites section<br>• Added integration-notes section |
+
+**Key Integration Points:**
+- Each skill now reports workflow state conversationally before proceeding
+- Missing prerequisites direct users to correct skill with workflow-status tip
+- All handoff documents use .docs/ subdirectory consistently
+- Each skill mentions workflow-status as a utility for checking progress
+
+**Files Updated:**
+- /Volumes/dev/develop/workflow-suite/skills/tech-stack-advisor/SKILL.md
+- /Volumes/dev/develop/workflow-suite/skills/deployment-advisor/SKILL.md
+- /Volumes/dev/develop/workflow-suite/skills/project-spinup/SKILL.md
+
+**Next Steps:**
+1. Deploy all 5 workflow skills to ~/.claude/skills/
+2. Test complete workflow with a real project
+3. Verify prerequisite checking works correctly
+4. Validate conversational status reporting
 
 ---
 
